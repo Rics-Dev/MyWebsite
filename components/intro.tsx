@@ -11,9 +11,14 @@ import Link from 'next/link';
 import { BsArrowRight, BsGithub, BsLinkedin } from 'react-icons/bs'
 import { HiDownload } from 'react-icons/hi'
 import { useSectionInView } from '@/lib/hooks';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 export default function Intro() {
-    const {ref} = useSectionInView('Acceuil');
+    const { ref } = useSectionInView('Acceuil', 0.5);
+    const {
+        setActiveSection,
+        setTimeOfLastClick
+    } = useActiveSectionContext();
 
 
 
@@ -36,7 +41,13 @@ export default function Intro() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1, }}
                     >
-                        <Link href='#contact' className='group bg-blue-950 text-white font-[600] px-7 py-3 flex items-center gap-2 rounded-full border-[0.1rem] border-white shadow-xl outline-none focus:scale-110 active:scale-105 hover:scale-110 transition '>
+                        <Link
+                            href='#contact'
+                            className='group bg-blue-950 text-white font-[600] px-7 py-3 flex items-center gap-2 rounded-full border-[0.1rem] border-white shadow-xl outline-none focus:scale-110 active:scale-105 hover:scale-110 transition '
+                            onClick={() => {
+                                setActiveSection("Contact");
+                                setTimeOfLastClick(Date.now());
+                            }}>
                             <span>
                                 <Image src={logo} alt="Image Alt Text" quality={95} width={30} className="" />
                             </span>

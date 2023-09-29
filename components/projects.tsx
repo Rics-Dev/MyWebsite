@@ -3,15 +3,18 @@ import React from 'react';
 import Project from '@/components/project';
 import { projectsData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
+import { motion } from 'framer-motion'
 
 export default function Projects() {
-  const { ref } = useSectionInView('Projets');
+  const { ref } = useSectionInView('Projets', 0);
 
   return (
-    <section
+    <motion.section
       ref={ref}
       id='projects'
-      className='mb-28 max-w-[100%] text-center leading-8 sm:mb-40 mt-10 sm:mt-5 scroll-mt-32'
+      className='mb-28 max-w-[100%] text-center leading-8 sm:mb-34 mt-10 sm:mt-5 scroll-mt-32'
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
     >
       <h2 className='text-3xl font-medium capitalize mb-16'>Projets</h2>
 
@@ -22,7 +25,7 @@ export default function Projects() {
           </React.Fragment>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

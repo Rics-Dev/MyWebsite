@@ -4,6 +4,9 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import wheelOfMisfortune from "@/public/wheelofmisfortune.jpg";
 import travlan from "@/public/travlan.png";
+import { AiFillHtml5 } from 'react-icons/ai';
+
+
 // import rmtdevImg from "@/public/rmtdev.png";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
@@ -17,12 +20,12 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Projets",
-    hash: "#projects",
-  },
-  {
     name: "Compétences",
     hash: "#skills",
+  },
+  {
+    name: "Projets",
+    hash: "#projects",
   },
   {
     name: "Contact",
@@ -62,7 +65,7 @@ export const projectsData = [
     title: "Wheel Of Misfortune",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-      tags: ["Android Studio", "Kotlin", "SQLite", "Figma"],
+    tags: ["Android Studio", "Kotlin", "SQLite", "Figma"],
     imageUrl: wheelOfMisfortune,
     type: "portrait",
     githubUrl: "https://github.com/RacimFethallah/Wheel-of-misfortune",
@@ -76,27 +79,13 @@ export const projectsData = [
     type: "landscape",
     githubUrl: "https://github.com/RacimFethallah/Travlan",
   },
-  
+
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  {
+    name: "HTML",
+    icon: AiFillHtml5,
+  },
+  
 ] as const;

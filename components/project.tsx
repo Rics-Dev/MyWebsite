@@ -39,6 +39,7 @@ export default function Project({
         'sm:h-[36.5rem]',
         'hover:scale-[1.05]',
         'hover:bg-gray-200',
+        'transition'
     );
 
     return (
@@ -77,13 +78,13 @@ export default function Project({
                             src={imageUrl}
                             alt='Projects I worked on'
                             quality={95}
-                            className={`flex-grow rounded-lg border-black border-[0.1rem]  mt-3 mb-3 
+                            className={`flex-grow rounded-xl border-black border-[0.1rem]  mt-3 mb-3 shadow-xl
                             ${type === 'portrait' ? 'w-[15rem] h-[10rem]' : ''}
-                            ${type === 'landscape' ? 'w-[35rem]' : ''}`}
+                            ${type === 'landscape' ? 'w-[37rem]' : ''}`}
                         />
                         <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
-                            <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-110 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3'><BsGithub /> Github</a>
-                            <a href="#" className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-110 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3'><HiPlay /> Demo</a>
+                            <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3'><BsGithub /> Github</a>
+                            <a href="#" className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3'><HiPlay /> Demo</a>
                         </div>
 
                     </div>
