@@ -3,6 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import wheelOfMisfortune from "@/public/wheelofmisfortune.jpg";
+import travlan from "@/public/travlan.png";
 // import rmtdevImg from "@/public/rmtdev.png";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
@@ -61,29 +62,19 @@ export const projectsData = [
     title: "Wheel Of Misfortune",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      tags: ["Android Studio", "Kotlin", "SQLite", "Figma"],
     imageUrl: wheelOfMisfortune,
+    type: "portrait",
+    githubUrl: "https://github.com/RacimFethallah/Wheel-of-misfortune",
   },
   {
-    title: "Wheel Of Misfortune",
+    title: "Travlan",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: wheelOfMisfortune,
-  },
-  {
-    title: "Wheel Of Misfortune",
-    description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: wheelOfMisfortune,
-  },
-  {
-    title: "Wheel Of Misfortune",
-    description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: wheelOfMisfortune,
+    tags: ["Html", "Css", "JavaScript", "PHP", "MariaDB", "PHPMyAdmin"],
+    imageUrl: travlan,
+    type: "landscape",
+    githubUrl: "https://github.com/RacimFethallah/Travlan",
   },
   
 ] as const;
