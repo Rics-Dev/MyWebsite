@@ -5,7 +5,8 @@ import { LuGraduationCap } from "react-icons/lu";
 import wheelOfMisfortune from "@/public/wheelofmisfortune.jpg";
 import travlan from "@/public/travlan.png";
 import MyTasks from "@/public/MyTasks.png"
-import { AiFillHtml5 } from 'react-icons/ai';
+import { SiCss3, SiNextdotjs, SiDart, SiKotlin, SiLinux, SiWindows11, SiC, SiCplusplus } from 'react-icons/si';
+import { BiLogoJavascript, BiLogoReact, BiLogoPhp, BiLogoPython, BiLogoGithub, BiLogoHtml5 } from 'react-icons/bi';
 
 
 // import rmtdevImg from "@/public/rmtdev.png";
@@ -96,7 +97,60 @@ export const projectsData = [
 export const skillsData = [
   {
     name: "HTML",
-    icon: AiFillHtml5,
+    icon: BiLogoHtml5,
   },
+  {
+    name: "CSS",
+    icon: SiCss3,
+  },
+  {
+    name: "JavaScript",
+    icon: BiLogoJavascript,
+  },
+  {
+    name: "React Native",
+    icon: BiLogoReact,
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+  },
+  {
+    name: "PHP",
+    icon: BiLogoPhp,
+  },
+  {
+    name: "Python",
+    icon: BiLogoPython,
+  },
+  {
+    name: "C",
+    icon: SiC,
+  },
+  {
+    name: "C++",
+    icon: SiCplusplus,
+  },
+  {
+    name: "Dart",
+    icon: SiDart,
+  },
+  {
+    name: "Kotlin",
+    icon: SiKotlin,
+  },
+  {
+    name: "Git",
+    icon: BiLogoGithub,
+  },
+  {
+    name: "GNU/Linux",
+    icon: SiLinux,
+  },
+  {
+    name: "Windows",
+    icon: SiWindows11,
+  },
+  
   
 ] as const;
