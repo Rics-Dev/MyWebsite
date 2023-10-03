@@ -2,4 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.my-custom-position-class {
+    /* Default position for small screens (xs) */
+    bottom: 1.5rem;
+  
+    /* Large screen (lg) and above */
+    @media (min-width: 1024px) {
+      top: 1.5rem;
+      bottom: auto;
+    }
+  }

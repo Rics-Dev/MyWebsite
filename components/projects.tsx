@@ -12,7 +12,8 @@ export default function Projects() {
     <motion.section
       ref={ref}
       id='projects'
-      className='mb-28 max-w-[100%] text-center leading-8 sm:mb-34 mt-10 sm:mt-5 scroll-mt-32'
+      className='mb-8 max-w-full text-center leading-8 sm:mb-10 mt-5 sm:mt-0 sm:scroll-mt-32'
+
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
     >

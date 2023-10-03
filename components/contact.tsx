@@ -30,7 +30,7 @@ export default function Contact() {
 
 
             <a href="mailto:fethallahracim@outlook.com"
-                className='flex text-[1rem] gap-2 items-center bg-white border-[0.1rem] border-blue-950 rounded-xl px-5 py-4 mb-14 mt-24 w-[23rem] font-[600] shadow-xl hover:bg-blue-950 hover:text-white hover:border-white outline-none focus:scale-100 active:scale-100 hover:scale-105 transition'>
+                className='flex text-[1rem] gap-2 items-center bg-white border-[0.1rem] border-blue-950 rounded-xl px-5 py-4 mb-14 mt-24 w-[23rem] font-[600] shadow-xl hover:bg-blue-950 hover:text-white hover:border-white outline-none focus:scale-100 active:scale-100 hover:scale-105 transition dark:text-blue-950 dark:bg-white dark:hover:text-white dark:hover:bg-blue-950'>
                 <HiMail className='text-[1.5rem]' /> mohamedracim.fethallah@gmail.com</a>
 
 
@@ -38,8 +38,8 @@ export default function Contact() {
                 action={async (formData) => {
                     await sendEmail(formData);
                 }}>
-                <input type="email" name='senderEmail' required placeholder='Votre Email' className='px-4 h-12 rounded-lg border-[0.1rem] border-blue-950 focus:shadow-xl focus:border-[0.15rem] outline-none' />
-                <textarea required maxLength={5000} name='message' placeholder='Votre Message' className='h-52 my-3 rounded-lg border-blue-950 border-[0.1rem] p-4 focus:shadow-xl focus:border-[0.15rem] outline-none' />
+                <input type="email" name='senderEmail' required placeholder='Votre Email' className='px-4 h-12 rounded-lg border-[0.1rem] border-blue-950 focus:shadow-xl focus:border-[0.15rem] outline-none dark:bg-white dark:text-blue-950' />
+                <textarea required maxLength={5000} name='message' placeholder='Votre Message' className='h-52 my-3 rounded-lg border-blue-950 border-[0.1rem] p-4 focus:shadow-xl focus:border-[0.15rem] outline-none dark:bg-white dark:text-blue-950' />
                 <div className='flex justify-center items-center mt-2'>
                     <button
                         type='submit'

@@ -4,6 +4,7 @@ import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import wheelOfMisfortune from "@/public/wheelofmisfortune.jpg";
 import travlan from "@/public/travlan.png";
+import MyTasks from "@/public/MyTasks.png"
 import { AiFillHtml5 } from 'react-icons/ai';
 
 
@@ -64,7 +65,7 @@ export const projectsData = [
   {
     title: "Wheel Of Misfortune",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+      "Application Android pour créer et faire tourner des roues personnalisables pour prendre des décisions aléatoires.",
     tags: ["Android Studio", "Kotlin", "SQLite", "Figma"],
     imageUrl: wheelOfMisfortune,
     type: "portrait",
@@ -73,12 +74,22 @@ export const projectsData = [
   {
     title: "Travlan",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+      "Application web pour la planification de voyages en ligne.",
     tags: ["Html", "Css", "JavaScript", "PHP", "MariaDB", "PHPMyAdmin"],
     imageUrl: travlan,
     type: "landscape",
     githubUrl: "https://github.com/RacimFethallah/Travlan",
   },
+  {
+    title: "MyTasks",
+    description:
+      "Application web TODO List minimaliste.",
+    tags: ["Html", "Css", "JavaScript"],
+    imageUrl: MyTasks,
+    type: "landscape",
+    githubUrl: "https://github.com/RacimFethallah/MyTasks",
+  },
+  
 
 ] as const;
 
