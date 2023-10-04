@@ -32,7 +32,7 @@ export default function Intro() {
                     <motion.h1 className='mb-10 mt-4 text-2x1 font-medium !leading-[1.5] sm:text-4x1 flex flex-col items-center justify-start'
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}>
-                        <span className='text-[1rem] font-medium text-gray-500 dark:text-gray-50'>Hello, I'm</span>
+                        <span className='text-[1rem] font-medium text-gray-500 dark:text-gray-50'>Hello, I&apos;m</span>
                         <span className='text-[2rem] font-[1000] mt-3 text-blue-950 dark:text-blue-100'>Fethallah Mohamed Racim</span>
                         <span className='text-[1.3rem] text-blue-950 dark:text-blue-200 font-[800] mt-3'>Ingénieur logiciel junior</span>
                     </motion.h1>
