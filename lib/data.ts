@@ -9,8 +9,7 @@ import { SiCss3, SiNextdotjs, SiDart, SiKotlin, SiLinux, SiWindows11, SiC, SiCpl
 import { BiLogoJavascript, BiLogoReact, BiLogoPhp, BiLogoPython, BiLogoGithub, BiLogoHtml5 } from 'react-icons/bi';
 
 
-// import rmtdevImg from "@/public/rmtdev.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
+
 
 export const links = [
   {
@@ -26,6 +25,10 @@ export const links = [
     hash: "#skills",
   },
   {
+    name: "Experience",
+    hash: "#experience",
+  },
+  {
     name: "Projets",
     hash: "#projects",
   },
@@ -37,28 +40,20 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Licence en Systèmes d'informations",
+    location: "Université Abderrahmane Mira, Bejaia, Algerie",
     description:
       "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2020 - 2023",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Master en Ingenierie du logiciel",
+    location: "Université des sciences et de la technologie Houari Boumediene, Bab Ezzouar, Algerie",
     description:
       "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+    icon: React.createElement(LuGraduationCap),
+    date: "2023 - present",
   },
 ] as const;
 

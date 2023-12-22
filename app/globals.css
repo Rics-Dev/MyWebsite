@@ -12,3 +12,9 @@
       bottom: auto;
     }
   }
+html{
+  --line-color: #172554;
+}
+html.dark{
+  --line-color: #fff;
+}
