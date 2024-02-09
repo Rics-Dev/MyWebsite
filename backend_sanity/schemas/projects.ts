@@ -21,9 +21,20 @@ export default {
             of: [{ type: 'string' }],
         },
         {
+            name: 'display',
+            title: 'Display',
+            type: 'string',
+            options: {
+                list: ['portrait', 'landscape'],
+            },
+        },
+        {
             name: 'type',
             title: 'Type',
             type: 'string',
+            options: {
+                list: ['web app', 'mobile app', 'web and mobile'],
+            },
         },
         {
             name: 'image',

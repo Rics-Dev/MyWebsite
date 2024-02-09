@@ -26,27 +26,27 @@ export const client = createClient({
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "",
     apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? "2024-02-08",
     useCdn: true,
-    token: process.env.NEXT_PUBLIC_SANITY_TOKEN ?? "",
+    // token: process.env.NEXT_PUBLIC_SANITY_TOKEN ?? "",
 });
 
 
 export async function getAbout() {
     const about = await client.fetch('*[_type == "about"][0].paragraph');
     return about
-  }
+}
 
 export async function getExperiences() {
     const experiences = await client.fetch('*[_type == "experiences"]');
     return experiences
-  }
+}
 
 export async function getProjects() {
     const projects = await client.fetch('*[_type == "projects"]');
     return projects
-  }
+}
 
-  const builder = imageUrlBuilder(client)
+const builder = imageUrlBuilder(client)
 
-  export const urlFor = (source: SanityImageSource) => {
+export const urlFor = (source: SanityImageSource) => {
     return builder.image(source)
 } 
