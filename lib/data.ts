@@ -85,7 +85,7 @@ export const projectsData = [
     type: "landscape",
     githubUrl: "https://github.com/RacimFethallah/MyTasks",
   },
-  
+
 
 ] as const;
 
@@ -146,6 +146,6 @@ export const skillsData = [
     name: "Windows",
     icon: SiWindows11,
   },
-  
-  
+
+
 ] as const;
