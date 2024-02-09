@@ -13,6 +13,7 @@ const StyledButton = tw.button`
     hover:bg-blue-950 hover:text-white hover:border-white 
     focus:bg-blue-950 focus:text-white focus:border-white 
     active:bg-blue-950 active:text-white active:border-white
+    dark:text-blue-950 dark:hover:text-white dark:focus:text-white dark:active:text-white
 `;
 
 const AppTypeButton: React.FC<AppTypeButtonProps> = ({ onClick, children }) => {
