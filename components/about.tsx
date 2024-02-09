@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
-import { client } from '@/client';
+import { client, getAbout } from '@/client';
 
 
 export default function About() {
@@ -14,8 +14,9 @@ export default function About() {
     useEffect(() => {
         const fetchAbout = async () => {
             try {
-                const [about, experiences] = await client();
+                const about = await getAbout();
                 setAboutParagraph(about);
+                console.log(about);
             } catch (error) {
                 console.error('Error fetching about section content:', error);
             }

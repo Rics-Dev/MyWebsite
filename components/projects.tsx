@@ -4,7 +4,8 @@ import Project from '@/components/project';
 import { projectsData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
 import { motion } from 'framer-motion'
-import { client } from '@/client';
+import { client, getProjects } from '@/client';
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 
 interface ProjectItem {
@@ -12,7 +13,7 @@ interface ProjectItem {
   description: string;
   technology: Array<string>;
   type: string;
-  image: { asset: { _ref: string } };
+  image: SanityImageSource;
   githubUrl: string;
 }
 
@@ -23,7 +24,7 @@ export default function Projects() {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const [, , projects] = await client();
+        const projects = await getProjects();
         setProjects(projects);
         console.log(projects);
       } catch (error) {

@@ -1,7 +1,5 @@
 import { defineConfig } from 'sanity';
 
-import imageUrlBuilder from "@sanity/image-url";
-
 import { structureTool } from 'sanity/structure';  // Import structureTool
 import { schemaTypes } from './backend_sanity/schemas';
 
@@ -19,8 +17,5 @@ const config = defineConfig({
   plugins: [structureTool()], // Use structureTool plugin
 });
 
-const builder = imageUrlBuilder(config);
-
-export const urlFor = (source: any) => builder.image(source);
 
 export default config;

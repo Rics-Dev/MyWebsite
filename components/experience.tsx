@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { useTheme } from "@/context/theme-context";
-import { client } from '@/client';
+import { client, getExperiences } from '@/client';
 import { IconType } from 'react-icons';
 
 
@@ -27,8 +27,9 @@ export default function Experience() {
   useEffect(() => {
     const fetchExperience = async () => {
       try {
-        const [, experiences] = await client();
+        const experiences = await getExperiences();
         setExperiences(experiences);
+        console.log(experiences);
       } catch (error) {
         console.error('Error fetching experience data:', error);
       }

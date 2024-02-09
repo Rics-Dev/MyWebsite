@@ -8,10 +8,12 @@ import { BsGithub, BsPlayFill, BsPlay } from 'react-icons/bs';
 import { FaPlay } from 'react-icons/fa';
 import { HiPlay } from 'react-icons/hi';
 import classNames from 'classnames';
+import { urlFor } from '@/client';
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 type ProjectProps = (typeof projectsData)[number];
 
-type projectData = { title: string, description: string, technology: Array<string>, type: string, image: { asset: { _ref: string } }, githubUrl: string }
+type projectData = { title: string, description: string, technology: Array<string>, type: string, image: SanityImageSource, githubUrl: string }
 
 export default function Project({
     title,
@@ -28,9 +30,9 @@ export default function Project({
     });
     const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
     const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1])
-    
 
-    const imageUrl = image?.asset?._ref ? `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${image.asset._ref}` : '';
+
+    // const imageUrl = image?.asset?._ref ? `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${image.asset._ref}` : '';
 
     const containerClassName = classNames(
         'max-w-[42rem]',
@@ -49,6 +51,7 @@ export default function Project({
         'dark:hover:bg-slate-200',
         'transition'
     );
+
 
     return (
 
@@ -82,14 +85,17 @@ export default function Project({
                      ${type === 'landscape' ? 'w-auto' : 'h-[35rem]'}`}>
 
 
-                        {/* <Image
-                            src={imageUrl}
+                        <Image
+                            src={urlFor(image).url()}
                             alt='Projects I worked on'
                             quality={95}
+                            width={500}
+                            height={500}
                             className={`flex-grow rounded-xl border-black border-[0.1rem]  mt-3 mb-3 mx-3 shadow-xl
                             ${type === 'portrait' ? 'w-[15rem] h-[10rem]' : ''}
                             ${type === 'landscape' ? 'w-[37rem]' : ''}`}
-                        /> */}
+                        />
+                        {/* <img src={urlFor(image).url()} alt="" /> */}
                         <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
                             <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><BsGithub /> Github</a>
                             <a href="#" className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>
