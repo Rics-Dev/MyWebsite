@@ -1,30 +1,75 @@
 "use client"
 import { experiencesData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
-import React from 'react'
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { LuGraduationCap } from "react-icons/lu";
+import React, { useEffect, useState } from 'react'
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { useTheme } from "@/context/theme-context";
+import { client } from '@/client';
+import { IconType } from 'react-icons';
+
+
+interface ExperienceItem {
+  title: string;
+  location: string;
+  icon: string;
+  description: string;
+  date: string;
+}
 
 
 export default function Experience() {
-    const { ref } = useSectionInView('Experience', 0);
-    const {theme} = useTheme();
+  const { ref } = useSectionInView('Experience', 0);
+  const { theme } = useTheme();
+  const [experiences, setExperiences] = useState<ExperienceItem[]>([]);
+
+  useEffect(() => {
+    const fetchExperience = async () => {
+      try {
+        const [, experiences] = await client();
+        setExperiences(experiences);
+      } catch (error) {
+        console.error('Error fetching experience data:', error);
+      }
+    };
+
+    fetchExperience();
+  }, []);
+
+  const iconComponents: Record<string, IconType> = {
+    LuGraduationCap: LuGraduationCap,
+    // Add other icon components here
+  };
+
+  const IconComponent = ({ name }: { name: string }) => {
+    const Icon = iconComponents[name];
+    if (!Icon) {
+      console.warn(`Icon "${name}" not found`);
+      return null;
+    }
+
+    return <Icon />;
+  };
+
+
+
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <h2 className="text-3xl font-medium capitalize mb-16 text-center">
         Mon Experience
       </h2>
-      <VerticalTimeline lineColor=''>
-        {experiencesData.map((item, index) => (
+      <VerticalTimeline lineColor='' className='!w-screen' >
+        {experiences.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
-                visible = {true}
+              visible={true}
               contentStyle={{
                 background:
                   theme === "light" ? "#fff" : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;",
                 border: "1px solid rgba(0, 0, 0, 0.05)",
+                borderRadius: "0.5rem",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}
@@ -35,7 +80,7 @@ export default function Experience() {
                     : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={item.date}
-              icon={item.icon}
+              icon={<IconComponent name={item.icon} />}
               iconStyle={{
                 boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
                 border: "3px solid rgba(255, 255, 255)",
@@ -45,9 +90,9 @@ export default function Experience() {
                 color: theme === "light" ? "#fff" : "#172554",
               }}
             >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <h3 className="font-bold capitalize ">{item.title}</h3>
+              <p className="font-semibold !mt-0">{item.location}</p>
+              <p className="!mt-5 !font-normal text-gray-700 dark:text-white/75">
                 {item.description}
               </p>
             </VerticalTimelineElement>
@@ -57,3 +102,4 @@ export default function Experience() {
     </section>
   );
 }
+

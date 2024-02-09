@@ -11,14 +11,16 @@ import classNames from 'classnames';
 
 type ProjectProps = (typeof projectsData)[number];
 
+type projectData = { title: string, description: string, technology: Array<string>, type: string, image: { asset: { _ref: string } }, githubUrl: string }
+
 export default function Project({
     title,
     description,
-    tags,
-    imageUrl,
+    technology,
     type,
+    image,
     githubUrl,
-}: ProjectProps) {
+}: projectData) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -26,6 +28,9 @@ export default function Project({
     });
     const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
     const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1])
+    
+
+    const imageUrl = image?.asset?._ref ? `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${image.asset._ref}` : '';
 
     const containerClassName = classNames(
         'max-w-[42rem]',
@@ -33,12 +38,13 @@ export default function Project({
         'rounded-3xl',
         'overflow-hidden',
         'relative',
+        'shadow-2xl',
         'mb-2',
         'sm:mb-6',
         'last:mb-0',
         'sm:h-[36.5rem]',
-        'hover:scale-[1.05]',
-        'hover:bg-gray-200',
+        // 'hover:scale-[1.05]',
+        'hover:bg-white',
         'dark:bg-white',
         'dark:hover:bg-slate-200',
         'transition'
@@ -48,7 +54,7 @@ export default function Project({
 
         <motion.div
             ref={ref} style={{
-                scale: scaleProgress,
+                // scale: scaleProgress,
                 opacity: opacityProgress,
             }}
         >
@@ -62,7 +68,7 @@ export default function Project({
                         </div>
                         <ul className={`flex flex-wrap mt-3 mb-1 ml-4 gap-2 justify-center
                         ${type === 'portrait' ? 'mb-5' : ''}`}>
-                            {tags.map((tag, index) => (
+                            {technology.map((tag, index) => (
                                 <li
                                     className='bg-blue-950 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full shadow-2xl'
                                     key={index}
@@ -76,14 +82,14 @@ export default function Project({
                      ${type === 'landscape' ? 'w-auto' : 'h-[35rem]'}`}>
 
 
-                        <Image
+                        {/* <Image
                             src={imageUrl}
                             alt='Projects I worked on'
                             quality={95}
                             className={`flex-grow rounded-xl border-black border-[0.1rem]  mt-3 mb-3 mx-3 shadow-xl
                             ${type === 'portrait' ? 'w-[15rem] h-[10rem]' : ''}
                             ${type === 'landscape' ? 'w-[37rem]' : ''}`}
-                        />
+                        /> */}
                         <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
                             <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><BsGithub /> Github</a>
                             <a href="#" className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>

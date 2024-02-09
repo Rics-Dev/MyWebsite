@@ -1,12 +1,38 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Project from '@/components/project';
 import { projectsData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
 import { motion } from 'framer-motion'
+import { client } from '@/client';
+
+
+interface ProjectItem {
+  title: string;
+  description: string;
+  technology: Array<string>;
+  type: string;
+  image: { asset: { _ref: string } };
+  githubUrl: string;
+}
 
 export default function Projects() {
   const { ref } = useSectionInView('Projets', 0);
+  const [projects, setProjects] = useState<ProjectItem[]>([]);
+
+  useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        const [, , projects] = await client();
+        setProjects(projects);
+        console.log(projects);
+      } catch (error) {
+        console.error('Error fetching experience data:', error);
+      }
+    };
+
+    fetchProject();
+  }, []);
 
   return (
     <motion.section
@@ -20,7 +46,7 @@ export default function Projects() {
       <h2 className='text-3xl font-medium capitalize mb-16'>Projets</h2>
 
       <div className='flex flex-wrap justify-center gap-10'>
-        {projectsData.map((project, index) => (
+        {projects.map((project, index) => (
           <React.Fragment key={index}>
             <Project {...project} />
           </React.Fragment>
