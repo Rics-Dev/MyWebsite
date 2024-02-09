@@ -53,7 +53,7 @@ export default function Projects() {
   }, [selectedAppType]);
 
 
-  
+
 
   const handleAppTypeButtonClick = (appType: string) => {
     setSelectedAppType(appType);
@@ -74,8 +74,15 @@ export default function Projects() {
         <AppTypeButton onClick={() => handleAppTypeButtonClick('All')}>All</AppTypeButton>
         <AppTypeButton onClick={() => handleAppTypeButtonClick('web app')}>Web App</AppTypeButton>
         <AppTypeButton onClick={() => handleAppTypeButtonClick('mobile app')}>Mobile App</AppTypeButton>
+        <AppTypeButton onClick={() => handleAppTypeButtonClick('web and mobile')}>Cross Platform</AppTypeButton>
       </div>
 
+
+      {projects.length === 0 && (
+        <p className='mt-44'>
+          Aucun Projet trouvé
+        </p>
+      )}
       <div className='flex flex-wrap justify-center gap-10'>
         {projects.map((project, index) => (
           <React.Fragment key={index}>
