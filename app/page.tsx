@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <ActiveSectionContextProvider>
       <Header />
-      <main className="flex flex-col items-center px-4 ">
+      <main className="flex flex-col items-center px-4 pt-44 sm:pt-52">
         <ThemeContextProvider>
           <Intro />
           <SectionDivider />
