@@ -10,7 +10,7 @@ const config = defineConfig({
   apiVersion: process.env.NEXT_SANITY_API_VERSION ?? "2024-02-08",
   basePath: "/admin",
   useCdn: false,
- token: process.env.NEXT_SANITY_TOKEN ?? "",
+  token: process.env.NEXT_SANITY_TOKEN ?? "",
   schema: {
     types: schemaTypes,
   },
