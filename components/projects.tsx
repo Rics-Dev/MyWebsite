@@ -18,6 +18,8 @@ interface ProjectItem {
   type: string;
   image: SanityImageSource;
   githubUrl: string;
+  url: string;
+  googlePlayUrl: string;
 }
 
 export default function Projects() {
@@ -74,7 +76,7 @@ export default function Projects() {
         <AppTypeButton onClick={() => handleAppTypeButtonClick('All')}>All</AppTypeButton>
         <AppTypeButton onClick={() => handleAppTypeButtonClick('web app')}>Web App</AppTypeButton>
         <AppTypeButton onClick={() => handleAppTypeButtonClick('mobile app')}>Mobile App</AppTypeButton>
-        <AppTypeButton onClick={() => handleAppTypeButtonClick('web and mobile')}>Cross Platform</AppTypeButton>
+        {/* <AppTypeButton onClick={() => handleAppTypeButtonClick('web and mobile')}>Cross Platform</AppTypeButton> */}
       </div>
 
 

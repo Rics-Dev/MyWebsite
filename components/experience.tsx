@@ -56,7 +56,7 @@ export default function Experience() {
 
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-28">
       <h2 className="text-3xl font-medium capitalize mb-16 text-center">
         Mon Experience
       </h2>

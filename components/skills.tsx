@@ -26,7 +26,7 @@ export default function Skills() {
     return (
         <motion.section
             ref={ref}
-            className='scroll-mt-32 mb-28 max-w-[55rem] text-center sm:mb-40'
+            className='scroll-mt-32 mb-28 max-w-[55rem] text-center sm:mb-16'
             id='skills'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}

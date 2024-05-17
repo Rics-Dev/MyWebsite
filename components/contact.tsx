@@ -30,8 +30,8 @@ export default function Contact() {
 
 
             <a href="mailto:fethallahracim@outlook.com"
-                className='flex text-[1rem] gap-2 items-center bg-white border-[0.1rem] border-blue-950 rounded-xl px-5 py-4 mb-14 mt-24 w-[23rem] font-[600] shadow-xl hover:bg-blue-950 hover:text-white hover:border-white outline-none focus:scale-100 active:scale-100 hover:scale-105 transition dark:text-blue-950 dark:bg-white dark:hover:text-white dark:hover:bg-blue-950'>
-                <HiMail className='text-[1.5rem]' /> mohamedracim.fethallah@gmail.com</a>
+                className='flex text-[1rem] gap-2 text-center justify-center items-center bg-white border-[0.1rem] border-blue-950 rounded-xl px-5 py-4 mb-14 mt-24 w-[23rem] font-[600] shadow-xl hover:bg-blue-950 hover:text-white hover:border-white outline-none focus:scale-100 active:scale-100 hover:scale-105 transition dark:text-blue-950 dark:bg-white dark:hover:text-white dark:hover:bg-blue-950'>
+                <HiMail className='text-[1.5rem]' /> fethallahracim@outlook.com</a>
 
 
             <form className='flex flex-col w-[min(100%,38rem)]'

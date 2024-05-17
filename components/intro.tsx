@@ -34,7 +34,7 @@ export default function Intro() {
                         animate={{ opacity: 1, y: 0 }}>
                         <span className='text-[1rem] font-medium text-gray-500 dark:text-gray-50'>Hello, I&apos;m</span>
                         <span className='text-[2rem] font-[1000] mt-3 text-blue-950 dark:text-blue-100'>Fethallah Mohamed Racim</span>
-                        <span className='text-[1.3rem] text-blue-950 dark:text-blue-200 font-[800] mt-3'>Ingénieur logiciel junior</span>
+                        <span className='text-[1.3rem] text-blue-950 dark:text-blue-200 font-[800] mt-3'>Ingénieur logiciel</span>
                     </motion.h1>
                     <motion.div className='flex items-center justify-center flex-col sm:flex-row gap-3 px-4'
                         initial={{ opacity: 0, y: 100 }}

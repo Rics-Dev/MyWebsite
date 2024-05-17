@@ -13,7 +13,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 type ProjectProps = (typeof projectsData)[number];
 
-type projectData = { title: string, description: string, technology: Array<string>, display: string, type: string, image: SanityImageSource, githubUrl: string }
+type projectData = { title: string, description: string, technology: Array<string>, display: string, type: string, image: SanityImageSource, githubUrl: string, url: string, googlePlayUrl: string }
 
 export default function Project({
     title,
@@ -23,6 +23,8 @@ export default function Project({
     type,
     image,
     githubUrl,
+    url,
+    googlePlayUrl,
 }: projectData) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -65,7 +67,7 @@ export default function Project({
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, }}
-            
+
         >
             <section className={containerClassName}>
                 <div className={`flex ${display === 'landscape' ? 'flex-col' : ''}`}>
@@ -86,6 +88,12 @@ export default function Project({
                                 </li>
                             ))}
                         </ul>
+                        {
+                            type === 'mobile' &&
+                            <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
+                                <a href={googlePlayUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><FaPlay /> Play Store</a>
+                            </div>
+                        }
                     </div>
                     <div className={`flex flex-col items-center bg-white dark:bg-blue-950 rounded-3xl shadow-2xl h-[25rem] w-[17rem] mt-3 mb-5 mx-5 border-gray-950 border-[0.1rem]
                      ${display === 'landscape' ? 'w-auto' : 'h-[35rem]'}`}>
@@ -101,10 +109,13 @@ export default function Project({
                             ${display === 'portrait' ? 'w-[15rem] h-[10rem]' : ''}
                             ${display === 'landscape' ? 'w-[37rem]' : ''}`}
                         />
-                        {/* <img src={urlFor(image).url()} alt="" /> */}
                         <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
                             <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><BsGithub /> Github</a>
-                            <a href="#" className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>
+                            {
+                                type === 'web' && url &&
+                                <a href={url} className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>
+                            }
+
                         </div>
 
                     </div>

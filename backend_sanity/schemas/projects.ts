@@ -49,5 +49,15 @@ export default {
             title: 'GitHub URL',
             type: 'url',
         },
+        {
+            name: 'url',
+            title: 'URL',
+            type: 'url',
+        },
+        {
+            name: 'googlePlayUrl',
+            title: 'googlePlayUrl',
+            type: 'url',
+        },
     ],
 };
