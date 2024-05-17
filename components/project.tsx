@@ -35,7 +35,6 @@ export default function Project({
     const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1])
 
 
-    // const imageUrl = image?.asset?._ref ? `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${image.asset._ref}` : '';
 
     const containerClassName = classNames(
         'max-w-[42rem]',
@@ -71,7 +70,7 @@ export default function Project({
         >
             <section className={containerClassName}>
                 <div className={`flex ${display === 'landscape' ? 'flex-col' : ''}`}>
-                    <div className={`w-[50%] flex flex-col justify-between ${display === 'landscape' ? 'w-full' : ''}`}>
+                    <div className={`w-[50%] flex flex-col justify-between items-center ${display === 'landscape' ? 'w-full' : ''}`}>
                         <div className='pt-4 pb-0 px-5 sm:pl-5 sm:pr-2 sm:pt-4 h-full'>
                             <h3 className='text-2xl font-semibold dark:text-blue-950'>{title}</h3>
                             <p className={`mt-1 leading-relaxed text-blue-950
@@ -88,12 +87,7 @@ export default function Project({
                                 </li>
                             ))}
                         </ul>
-                        {
-                            type === 'mobile' &&
-                            <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
-                                <a href={googlePlayUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><FaPlay /> Play Store</a>
-                            </div>
-                        }
+
                     </div>
                     <div className={`flex flex-col items-center bg-white dark:bg-blue-950 rounded-3xl shadow-2xl h-[25rem] w-[17rem] mt-3 mb-5 mx-5 border-gray-950 border-[0.1rem]
                      ${display === 'landscape' ? 'w-auto' : 'h-[35rem]'}`}>
@@ -110,10 +104,19 @@ export default function Project({
                             ${display === 'landscape' ? 'w-[37rem]' : ''}`}
                         />
                         <div className='flex flex-row gap-1.5 h-[3.5rem] mx-2'>
-                            <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><BsGithub /> Github</a>
                             {
-                                type === 'web' && url &&
-                                <a href={url} className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>
+                                githubUrl &&
+
+                                <a href={githubUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><BsGithub /> Github</a>
+                            }
+                            {
+                                googlePlayUrl &&
+                                    <a href={googlePlayUrl} target='_blank' className='bg-gray-100 font-[600] px-4 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><FaPlay /> Play Store</a>
+                            }
+
+                            {
+                                url &&
+                                <a href={url} target='_blank' className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>
                             }
 
                         </div>
