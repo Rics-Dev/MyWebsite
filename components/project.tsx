@@ -89,7 +89,7 @@ export default function Project({
                         </ul>
 
                     </div>
-                    <div className={`flex flex-col items-center bg-white dark:bg-blue-950 rounded-3xl shadow-2xl h-[25rem] w-[17rem] mt-3 mb-5 mx-5 border-gray-950 border-[0.1rem]
+                    <div className={`flex flex-col items-center  rounded-3xl h-[25rem] w-[17rem] mt-3 mb-5 mx-5 
                      ${display === 'landscape' ? 'w-auto' : 'h-[35rem]'}`}>
 
 
@@ -99,7 +99,7 @@ export default function Project({
                             quality={95}
                             width={500}
                             height={500}
-                            className={`flex-grow rounded-xl border-black border-[0.1rem]  mt-3 mb-3 mx-3 shadow-xl
+                            className={`flex-grow rounded-xl   mt-3 mb-3 mx-3 shadow-2xl
                             ${display === 'portrait' ? 'w-[15rem] h-[10rem]' : ''}
                             ${display === 'landscape' ? 'w-[37rem]' : ''}`}
                         />
@@ -116,7 +116,7 @@ export default function Project({
 
                             {
                                 url &&
-                                <a href={url} target='_blank' className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Demo</a>
+                                <a href={url} target='_blank' className='bg-gray-100 font-[600] px-3 flex items-center gap-1.5 rounded-full border-[0.1rem] border-black shadow-xl outline-none focus:scale-100 active:scale-100 hover:scale-105 hover:bg-blue-950 hover:text-white hover:border-white transition mb-3 dark:text-blue-950 dark:hover:text-white'><HiPlay /> Live</a>
                             }
 
                         </div>
