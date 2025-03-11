@@ -16,6 +16,7 @@
     "framer-motion": "^12.4.4",
     "next": "15.1.7",
     "next-sanity": "^9.8.59",
+    "portfolio": ".",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-icons": "^4.11.0",
